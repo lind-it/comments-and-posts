@@ -36,6 +36,10 @@ for($i = 0; $i < count($postsResult); $i++)
 }
 if($conn->error)
 {
+    //выводим ошибку и в браузерную консоль, и на саму страницу
+    echo '<script>console.log("посты не загружены")</script>'."\n";
+    echo '<script>console.log("' . $conn->error .'")</script>'."\n";
+
     print("посты не загружены");
     print($conn->error);
 }
